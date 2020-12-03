@@ -1,0 +1,31 @@
+[
+  {
+    "accentColor": "#FFC107",
+    "backgroundColor": "#FAFAFA",
+    "displayName": "Deep Purple & Amber",
+    "isDefault": true,
+    "name": "deeppurple-amber",
+    "primaryColor": "#673AB7"
+  },
+  {
+    "accentColor": "#E91E63",
+    "backgroundColor": "#FAFAFA",
+    "displayName": "Indigo & Pink",
+    "name": "indigo-pink",
+    "primaryColor":"#3F51B5"
+  },
+  {
+    "accentColor": "#607D8B",
+    "backgroundColor": "#303030",
+    "displayName": "Pink & Blue-grey",
+    "name": "pink-bluegrey",
+    "primaryColor":"#E91E63"
+  },
+  {
+    "accentColor": "#4CAF50",
+    "backgroundColor":"#303030",
+    "displayName": "Purple & Green",
+    "name": "purple-green",
+    "primaryColor":"#9C27B0"
+  }
+]
