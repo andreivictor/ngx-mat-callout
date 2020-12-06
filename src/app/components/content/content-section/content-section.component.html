@@ -1,0 +1,12 @@
+<section class="app-content-section" id="{{ sectionId }}">
+  <h2 class="app-content-section__header" *ngIf="sectionTitle">
+    <a aria-label="Link to this heading" *ngIf="hasSectionUrl"
+       [attr.aria-describedby]="sectionId" [href]="getSectionUrl()">
+      <mat-icon>link</mat-icon>
+    </a>
+    {{ sectionTitle }}
+  </h2>
+  <div class="app-content-section__content">
+    <ng-content></ng-content>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<div class="app-content-example-viewer-wrapper has-border">
+  <div class="app-content-example-viewer__header">
+    <div class="app-content-example-viewer__title">{{ title }}</div>
+    <button mat-icon-button type="button"
+            *ngIf="hasSourceView"
+            (click)="toggleSourceView()"
+            [matTooltip]="view==='demo' ? 'View code' : 'Hide code'" aria-label="View source">
+      <mat-icon>code</mat-icon>
+    </button>
+    <button mat-icon-button type="button" (click)="openStackBlitz()"
+            [matTooltip]="'View example in StackBlitz'" aria-label="View example in StackBlitz">
+      <mat-icon>open_in_new</mat-icon>
+    </button>
+  </div>
+
+  <div class="app-content-example-viewer__source" *ngIf="view === 'full'">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
+        <app-content-code-snippet
+          [content]="tab.content"
+          [language]="tab.extension"
+          [hasBorder]="false">
+        </app-content-code-snippet>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="app-content-example-viewer__body">
+    <ng-content></ng-content>
+  </div>
+
+</div>

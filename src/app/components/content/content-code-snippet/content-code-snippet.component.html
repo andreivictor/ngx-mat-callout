@@ -1,0 +1,12 @@
+<div class="app-content-code-snippet" [ngClass]="{'has-border': hasBorder}">
+  <div class="app-content-code-snippet__copy">
+    <button mat-icon-button type="button"
+            [matTooltip]="'Copy example source'"
+            (click)="copySource(content)">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
+  <div class="app-content-code-snippet__code">
+    <pre><code class="{{ language }}" appHighlightJs>{{ content }}</code></pre>
+  </div>
+</div>

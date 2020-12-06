@@ -1,0 +1,37 @@
+.mat-toolbar {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+  a {
+    color: inherit;
+
+    img {
+      height: 26px;
+      margin: 0 4px 3px 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+.app-main {
+  min-height: calc(100vh - 128px);
+  padding: 20px 40px;
+
+  .mat-tab-link {
+    text-transform: uppercase;
+  }
+}
+
+.app-footer {
+  .mat-toolbar {
+    justify-content: space-between;
+  }
+
+  &__angular-versions {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,27 @@
+<header class="app-header mat-elevation-z6">
+  <mat-toolbar color="primary">
+    {{ title }}
+    <span class="spacer"></span>
+    <app-theme-picker></app-theme-picker>
+    <a mat-button href="https://github.com/andreivictor/ngx-mat-callout/" target="_blank">
+      <img src="assets/github-circle-white-transparent.svg" alt="angular" class="docs-angular-logo">
+      Github
+    </a>
+  </mat-toolbar>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <mat-toolbar color="primary">
+    <div class="app-footer__version">
+      <span class="mat-small">Current Version: {{ appVersion }}</span>
+    </div>
+    <div class="app-footer__angular-versions">
+      <span class="mat-small">Angular Version: {{ angularVersion }}</span>
+      <span class="mat-small">Angular Material Version: {{ angularMaterialVersion }}</span>
+    </div>
+  </mat-toolbar>
+</footer>

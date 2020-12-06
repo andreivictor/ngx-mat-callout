@@ -1,0 +1,18 @@
+.ngx-mat-callout {
+  display: flex;
+  margin: 24px 0;
+
+  &__toolbar {
+    flex: 0 0 8px;
+    padding: 0;
+    height: auto;
+  }
+
+  &__content {
+    padding: 16px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<app-content-section [sectionId]="'overview'">
+  <p>Small library that brings the callout components seen on <a class="mat-icon mat-primary" href="https://getbootstrap.com/" target="_blank">Bootstrap Documentation</a> to be used as <a class="mat-icon mat-primary" href="https://material.angular.io/" target="_blank">Angular Material</a> library components.</p>
+  <app-content-example-viewer
+    [title]="'Callout overview'"
+    [internalName]="'overview'"
+    [stackBlitzId]="'angular-avezy6'">
+    <app-example-overview></app-example-overview>
+  </app-content-example-viewer>
+</app-content-section>
+
+<app-content-section [sectionId]="'instalation'" [sectionTitle]="'Instalation'">
+  <p>Install <code class="code--inline">ngx-mat-callout</code> in your project:</p>
+  <p>
+    <app-content-code-snippet
+      [language]="'ts'"
+      [content]="installationCode">
+    </app-content-code-snippet>
+  </p>
+</app-content-section>
+
+<app-content-section [sectionId]="'usage'" [sectionTitle]="'Usage'">
+  <p>Import the <code class="code--inline">NgxMatCalloutModule</code>:</p>
+  <p>
+    <app-content-code-snippet
+      [language]="'ts'"
+      [content]="basicUsageModuleCode">
+    </app-content-code-snippet>
+  </p>
+  <p>Start using the component <code class="code--inline">&lt;ngx-mat-callout&gt;</code>:</p>
+  <p>
+    <app-content-code-snippet
+      *ngIf="basicUsageComponentCode"
+      [language]="'html'"
+      [content]="basicUsageComponentCode">
+    </app-content-code-snippet>
+  </p>
+</app-content-section>
+
+<app-content-section [sectionId]="'heading'" [sectionTitle]="'Heading'">
+  <p>If a callout's heading is plain text only, then the <code class="code--inline">heading</code> property can be used:</p>
+  <p>
+    <app-content-code-snippet
+      [language]="'html'"
+      [content]="calloutHeadingInputCode">
+    </app-content-code-snippet>
+  </p>
+  <p>For more complex headings, add a template with the <code class="code--inline">ngxMatCalloutHeading</code> directive inside the <code class="code--inline">ngx-mat-callout</code> component:</p>
+  <p>
+    <app-content-code-snippet
+      [language]="'html'"
+      [content]="calloutHeadingDirectiveCode">
+    </app-content-code-snippet>
+  </p>
+</app-content-section>
+
+<app-content-section [sectionId]="'theming'" [sectionTitle]="'Theming'">
+  <p>The color of the <code class="code--inline">&lt;ngx-mat-callout&gt;</code> component can be changed by using the <code class="code--inline">color</code> property.</p>
+  <p>By default, callouts use a neutral background color based on the current theme (light or dark). This can be changed to <code class="code--inline">'primary'</code>, <code class="code--inline">'accent'</code>, or <code class="code--inline">'warn'</code>.</p>
+</app-content-section>
+
+<app-content-section [sectionId]="'compatibility'" [sectionTitle]="'Compatibility'">
+  <p>
+    <code class="code--inline">@angular/core: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0</code>
+  </p>
+ <p>
+   <code class="code--inline">@angular/material: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0</code>
+ </p>
+</app-content-section>
+
+<br/>
+<mat-divider></mat-divider>
+<br/>
+
+<app-content-section [sectionId]="'heading-template'"
+                     [sectionTitle]="'Callouts with heading template'">
+  <app-content-example-viewer
+    [title]="'Callouts with heading template'"
+    [internalName]="'custom-heading'"
+  >
+    <app-example-custom-heading></app-example-custom-heading>
+  </app-content-example-viewer>
+</app-content-section>
+
+<app-content-section [sectionId]="'simple-callouts'"
+                     [sectionTitle]="'Simple callouts (without heading)'">
+  <app-content-example-viewer
+    [title]="'Callouts without heading'"
+    [internalName]="'no-heading'"
+  >
+    <app-example-no-heading></app-example-no-heading>
+  </app-content-example-viewer>
+</app-content-section>

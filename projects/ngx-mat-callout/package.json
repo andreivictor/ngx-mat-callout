@@ -1,0 +1,12 @@
+{
+  "name": "ngx-mat-callout",
+  "version": "1.0.0",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=7.0.0",
+    "@angular/core": ">=7.0.0",
+    "@angular/material": ">=7.0.0"
+  }
+}

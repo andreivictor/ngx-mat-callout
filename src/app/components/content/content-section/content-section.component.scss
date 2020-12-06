@@ -1,0 +1,48 @@
+.app-content-section {
+  margin-top: 36px;
+  font-size: 16px;
+  line-height: 28px;
+
+  & + & {
+    margin-top: 48px;
+  }
+
+  &__header {
+    a {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      margin-left: -30px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mat-icon {
+      visibility: hidden;
+    }
+
+    &:hover {
+      .mat-icon {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__content {
+
+    ::ng-deep{
+      a.mat-icon {
+        width: auto;
+        height: auto;
+        text-decoration: none;
+      }
+
+      code.code--inline {
+        padding: 3px;
+        background: rgba(0,0,0,.06);
+        font-size: 90%;
+        font-family: Roboto Mono,monospace;
+      }
+    }
+  }
+}

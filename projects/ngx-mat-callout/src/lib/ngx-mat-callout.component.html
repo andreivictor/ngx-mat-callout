@@ -1,0 +1,8 @@
+<mat-toolbar [color]="color" class="ngx-mat-callout__toolbar"></mat-toolbar>
+<div class="ngx-mat-callout__content mat-typography">
+  <ng-container *ngIf="headingTemplate">
+    <ng-container [ngTemplateOutlet]="headingTemplate.template"></ng-container>
+  </ng-container>
+  <h2 *ngIf="headingText && !headingTemplate">{{ headingText }}</h2>
+  <ng-content></ng-content>
+</div>
