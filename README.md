@@ -7,7 +7,7 @@ Small library that brings the callout components seen on [Bootstrap Documentatio
 ![Ngx Mat Callout dark theme preview](preview-purple-green.png)
 
 ### Demo app
-https://andreivictor.github.io/ngx-mat-callout
+https://andreivictor.github.io/ngx-mat-callout/
 
 ### Stackblitz examples:
 - Callouts overview: https://stackblitz.com/edit/angular-r7rxyl-vwdlhy
