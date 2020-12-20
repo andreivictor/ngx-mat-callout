@@ -10,7 +10,8 @@ html {
 @import "app/styles/has-border";
 
 .mat-theme-deeppurple-amber,
-.mat-theme-indigo-pink {
+.mat-theme-indigo-pink,
+.mat-theme-red-green-custom {
 
   .has-border {
     border-color: rgba(0,0,0,.12);
@@ -20,7 +21,8 @@ html {
 }
 
 .mat-theme-pink-bluegrey,
-.mat-theme-purple-green {
+.mat-theme-purple-green,
+.mat-theme-blue-grey-amber-custom {
 
   .has-border {
     border-color: rgba(255,255,255,.12);

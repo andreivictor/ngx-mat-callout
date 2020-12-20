@@ -27,5 +27,19 @@
     "displayName": "Purple & Green",
     "name": "purple-green",
     "primaryColor":"#9C27B0"
+  },
+  {
+    "accentColor": "#66BB6A",
+    "backgroundColor":"#FAFAFA",
+    "displayName": "Red & Green (custom)",
+    "name": "red-green-custom",
+    "primaryColor":"#F44336"
+  },
+  {
+    "accentColor": "#FFD740",
+    "backgroundColor":"#303030",
+    "displayName": "Blue Grey & Amber (custom)",
+    "name": "blue-grey-amber-custom",
+    "primaryColor":"#607D8B"
   }
 ]
