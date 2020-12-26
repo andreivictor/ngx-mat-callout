@@ -38,34 +38,34 @@
                 "inject": true
               },
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+                "input": "src/app/themes/prebuilt/deeppurple-amber.scss",
                 "inject": false,
-                "bundleName": "assets/deeppurple-amber"
+                "bundleName": "assets/themes/deeppurple-amber"
               },
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+                "input": "src/app/themes/prebuilt/indigo-pink.scss",
                 "inject": false,
-                "bundleName": "assets/indigo-pink"
+                "bundleName": "assets/themes/indigo-pink"
               },
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+                "input": "src/app/themes/prebuilt/pink-bluegrey.scss",
                 "inject": false,
-                "bundleName": "assets/pink-bluegrey"
+                "bundleName": "assets/themes/pink-bluegrey"
               },
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/purple-green.css",
+                "input": "src/app/themes/prebuilt/purple-green.scss",
                 "inject": false,
-                "bundleName": "assets/purple-green"
+                "bundleName": "assets/themes/purple-green"
               },
               {
-                "input": "src/themes/red-green-custom.scss",
+                "input": "src/app/themes/custom/red-green.scss",
                 "inject": false,
-                "bundleName": "assets/red-green-custom"
+                "bundleName": "assets/themes/red-green"
               },
               {
-                "input": "src/themes/blue-grey-amber-custom.scss",
+                "input": "src/app/themes/custom/blue-grey-amber.scss",
                 "inject": false,
-                "bundleName": "assets/blue-grey-amber-custom"
+                "bundleName": "assets/themes/blue-grey-amber"
               }
             ],
             "scripts": []

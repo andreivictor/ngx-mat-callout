@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+.has-border {
+  border-color: mat-color($mat-dark-theme-foreground, divider);
+}
+
+.app-content-section__content code.code--inline,
+.properties__table__header-row th {
+  background: rgba(mat-color($mat-dark-theme-foreground, secondary-text), .06);
+}
+
+// Styles for Highlightjs
+@import '../../styles/highlightjs-material-dark';

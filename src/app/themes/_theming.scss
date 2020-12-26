@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+// Styles for the app that are based on the current theme.
+@mixin app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
+  $exportBackgroundOpacity: if($is-dark-theme, 0.06, 0.03);
+
+  .has-border {
+    border-color: mat-color($foreground, divider);
+  }
+
+  .app-content-section__content code.code--inline,
+  .properties__table__header-row th {
+    background: rgba(mat-color($foreground, secondary-text), $exportBackgroundOpacity);
+  }
+
+}

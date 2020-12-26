@@ -8,33 +8,3 @@ html {
 }
 
 @import "app/styles/has-border";
-
-.mat-theme-deeppurple-amber,
-.mat-theme-indigo-pink,
-.mat-theme-red-green-custom {
-
-  .has-border {
-    border-color: rgba(0,0,0,.12);
-  }
-
-  @import "app/styles/highlightjs-material-light";
-}
-
-.mat-theme-pink-bluegrey,
-.mat-theme-purple-green,
-.mat-theme-blue-grey-amber-custom {
-
-  .has-border {
-    border-color: rgba(255,255,255,.12);
-  }
-
-  .app-section__content code.code--inline {
-    background: hsla(0,0%,100%,.06) !important;
-  }
-
-  .properties__table__header-row th {
-    background: hsla(0,0%,100%,.06) !important;
-  }
-
-  @import "app/styles/highlightjs-material-dark";
-}

@@ -44,7 +44,7 @@ export class ThemePickerComponent implements OnInit {
     this.currentTheme = theme;
 
     this.themeService.storeTheme(this.currentTheme);
-    this.styleManagerService.setStyle('theme', `assets/${theme.name}.css`);
+    this.styleManagerService.setStyle('theme', `assets/themes/${theme.name}.css`);
 
     const themeClass = new RegExp(/mat-theme-\S*/);
     if ( this.document.body.className.match(themeClass)) {

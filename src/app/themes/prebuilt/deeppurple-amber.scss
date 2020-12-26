@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.has-border {
+  border-color: mat-color($mat-light-theme-foreground, divider);
+}
+
+.app-content-section__content code.code--inline {
+  background: rgba(mat-color($mat-light-theme-foreground, secondary-text), .03);
+}
+
+// Styles for Highlightjs
+@import '../../styles/highlightjs-material-light';
