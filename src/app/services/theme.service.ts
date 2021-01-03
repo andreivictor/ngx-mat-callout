@@ -55,12 +55,7 @@ export class ThemeService {
           if (storedThemeName) {
             return this.selectTheme(storedThemeName);
           } else {
-            const defaultTheme: Theme = themes.find(theme => theme.isDefault);
-            if (defaultTheme) {
-              this.currentTheme.next(defaultTheme);
-              this.document.body.classList.add(`mat-theme-${defaultTheme.name}`);
-            }
-            return of(void 0);
+            return this.selectTheme(null, true);
           }
         })
       )
@@ -77,16 +72,24 @@ export class ThemeService {
       );
   }
 
-  async selectTheme(themeName: string): Promise<void> {
-    const selectedTheme = this.themes.getValue().find(currentTheme => currentTheme.name === themeName);
+  async selectTheme(themeName: string, isDefault?: boolean): Promise<void> {
+    let selectedTheme: Theme;
 
-    if (!selectedTheme) {
-      return;
+    if (isDefault) {
+      selectedTheme = this.themes.getValue().find(theme => theme.isDefault) || this.themes.getValue()[0];
+    } else {
+      selectedTheme = this.themes.getValue().find(theme => theme.name === themeName);
+
+      if (!selectedTheme) {
+        return;
+      }
     }
 
     this.currentTheme.next(selectedTheme);
 
-    ThemeService.saveToLocalStorage(selectedTheme);
+    if (!isDefault) {
+      ThemeService.saveToLocalStorage(selectedTheme);
+    }
 
     await this.styleManagerService.setStyle('theme', `assets/themes/${selectedTheme.name}.css`);
 
