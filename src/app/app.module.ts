@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,21 +16,23 @@ import { NgxMatCalloutModule } from 'ngx-mat-callout';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { ThemeService } from './services';
+
 import { AppComponent } from './app.component';
 
-// Components for Pages
+// Components - Pages
 import {
   PageOverviewComponent
 } from './components/pages';
 
-// Components for Content
+// Components - Content
 import {
   ContentSectionComponent,
   ContentExampleViewerComponent,
   ContentCodeSnippetComponent
 } from './components/content';
 
-// Components for Examples
+// Components - Examples
 import {
   ExampleOverviewComponent,
   ExampleCustomHeadingComponent,
@@ -38,8 +40,10 @@ import {
   ExampleOverviewBasicComponent
 } from './components/examples';
 
+// Components - ThemePicker
 import { ThemePickerComponent } from './components';
 
+// Directives
 import { HighlightJsDirective } from './directives';
 
 @NgModule({
@@ -72,6 +76,12 @@ import { HighlightJsDirective } from './directives';
     NgxMatCalloutModule
   ],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (themeService: ThemeService) => () => themeService.initialize(),
+      deps: [ThemeService],
+      multi: true
+    },
     {
       provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
       useValue: {horizontalPosition: 'center'}

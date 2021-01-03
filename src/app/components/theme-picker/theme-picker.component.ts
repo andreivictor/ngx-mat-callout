@@ -1,57 +1,44 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Theme } from '../../interfaces';
-import { ThemeService, StyleManagerService } from '../../services';
+import { ThemeService } from '../../services';
 
 @Component({
   selector: 'app-theme-picker',
   templateUrl: './theme-picker.component.html',
   styleUrls: ['./theme-picker.component.scss']
 })
-export class ThemePickerComponent implements OnInit {
+export class ThemePickerComponent implements OnInit, OnDestroy {
   currentTheme: Theme;
   themes: Theme[];
 
+  private subscription: Subscription = new Subscription();
+
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private themeService: ThemeService,
-    private styleManagerService: StyleManagerService
+    private themeService: ThemeService
   ) {
   }
 
   ngOnInit(): void {
-    const storedThemeName = this.themeService.getStoredThemeName();
+    this.subscription.add(
+      this.themeService.currentTheme$.subscribe(theme => {
+        this.currentTheme = theme;
+      })
+    );
 
-    this.themeService.getThemes().subscribe(response => {
-      this.themes = response;
-
-      if (storedThemeName) {
-        this.selectTheme(storedThemeName);
-      } else {
-        this.currentTheme = this.themes.find(theme => theme.isDefault);
-        this.document.body.classList.add(`mat-theme-${this.currentTheme.name}`);
-      }
-    });
+    this.subscription.add(
+      this.themeService.themes$.subscribe(themes => {
+        this.themes = themes;
+      })
+    );
   }
 
-  selectTheme(themeName: string) {
-    const theme = this.themes.find(currentTheme => currentTheme.name === themeName);
+  selectTheme(themeName: string): void {
+    this.themeService.selectTheme(themeName);
+  }
 
-    if (!theme) {
-      return;
-    }
-
-    this.currentTheme = theme;
-
-    this.themeService.storeTheme(this.currentTheme);
-    this.styleManagerService.setStyle('theme', `assets/themes/${theme.name}.css`);
-
-    const themeClass = new RegExp(/mat-theme-\S*/);
-    if ( this.document.body.className.match(themeClass)) {
-      this.document.body.className = document.body.className.replace(themeClass, '');
-    }
-
-    this.document.body.classList.add(`mat-theme-${theme.name}`);
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
