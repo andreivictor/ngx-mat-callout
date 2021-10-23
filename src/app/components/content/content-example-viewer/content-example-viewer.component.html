@@ -7,7 +7,9 @@
             [matTooltip]="view==='demo' ? 'View code' : 'Hide code'" aria-label="View source">
       <mat-icon>code</mat-icon>
     </button>
-    <button mat-icon-button type="button" (click)="openStackBlitz()"
+    <button mat-icon-button type="button"
+            *ngIf="hasStackblitz"
+            (click)="openStackBlitz()"
             [matTooltip]="'View example in StackBlitz'" aria-label="View example in StackBlitz">
       <mat-icon>open_in_new</mat-icon>
     </button>

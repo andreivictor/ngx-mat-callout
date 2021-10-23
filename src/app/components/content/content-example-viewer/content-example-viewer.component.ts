@@ -44,7 +44,10 @@ export class ContentExampleViewerComponent implements OnInit {
   @Input() stackBlitzId: string;
 
   /** Whether to display source-view or not */
-  @Input() hasSourceView: boolean = false;
+  @Input() hasSourceView: boolean = true;
+
+  /** Whether to display Stackblitz button or not. */
+  @Input() hasStackblitz: boolean = false;
 
   constructor(
     private fileLoaderService: FileLoaderService,
